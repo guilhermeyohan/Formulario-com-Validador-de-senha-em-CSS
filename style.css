@@ -1,0 +1,142 @@
+.login-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-l {
+  text-align: center;
+  margin-bottom: 20px;
+  color: lightgray;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.infos {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+}
+
+label {
+  position: absolute;
+  top: 0px;
+  left: 15px;
+  color: #999;
+  font-size: 16px;
+  transition: 0.3s ease all;
+}
+
+.infos:focus, infos:not(:placeholder-shown) + label {
+  top: -20px;
+  font-size: 12px;
+  color: #007bff;
+}
+
+.progress-bar {
+  height: 5px;
+  background-color: #eee;
+  margin-top: 10px;
+}
+
+.progress-bar::before {
+  content: "";
+  display: block;
+  height: 100%;
+  background-color: #007bff;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.infos[type="password"] {
+  letter-spacing: 0.3em;
+}
+
+.infos[type="password"]:focus ~ .progress-bar::before, input[type="password"]:not(:placeholder-shown) ~ .progress-bar::before {
+  width: 25%;
+}
+
+.infos[type="password"]:valid ~ .progress-bar::before {
+  width: 50%;
+}
+
+.infos[type="password"]:valid + label::before {
+  content: "Média";
+  color: #ffc107;
+}
+
+.infos[type="password"]:valid + .progress-bar::before {
+  background-color: #ffc107;
+}
+
+.infos[type="password"]:valid ~ .progress-bar::before {
+  width: 75%;
+}
+
+.infos[type="password"]:valid + label::before {
+  content: "Forte";
+  color: #28a745;
+}
+
+.infos[type="password"]:valid + .progress-bar::before {
+  background-color: #28a745;
+}
+
+button {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+button:hover,
+button:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
